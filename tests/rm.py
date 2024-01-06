@@ -6,7 +6,7 @@ def delete_all_files_in_directory(directory):
     for file_name in file_list:
         file_path = os.path.join(directory, file_name)
         try:
-            if os.path.isfile(file_path):
+            if os.path.isfile(file_path) and os.path.basename(file_path) != '.gitkeep':
                 os.remove(file_path)
         except Exception as e:
             print(f"Error {file_path}: {e}")
